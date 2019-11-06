@@ -8,7 +8,7 @@
 
   echo "処理開始";
   if(isset($_POST['s_keys'])){
-    $s_keys       =$_POST['s_keys'];
+    $s_keys = htmlspecialchars($_POST['s_keys']);
 
     $T_99999_SEAT = new T_99999_SEAT();
     $arr = explode(',', $s_keys);

@@ -20,10 +20,10 @@
           $s_key = $T_99999_M_COMMON->getNewID();
         }
         $val[0] = htmlspecialchars($s_key);
-        $val[1] = htmlspecialchars($_POST['s_f002']);
-        $val[2] = htmlspecialchars($_POST['s_f003']);
-        $val[3] = htmlspecialchars($_POST['s_f004']);
-        $val[4] = htmlspecialchars($_POST['s_f005']);
+        $val[1] = $_POST['s_f002'];
+        $val[2] = $_POST['s_f003'];
+        $val[3] = $_POST['s_f004'];
+        $val[4] = $_POST['s_f005'];
         $ret = $T_99999_M_COMMON->update(...$val);
         break;
       case "T_".$CONST_GRP_NO."_M_FLOOR":
@@ -36,10 +36,10 @@
           $sortno = $T_99999_M_FLOOR->getNewSortNo();
         }
         $val[0] = htmlspecialchars($s_key);
-        $val[1] = htmlspecialchars($sortno);
-        $val[2] = htmlspecialchars($_POST['s_f003']);
-        $val[3] = htmlspecialchars($_POST['s_f004']);
-        $val[4] = htmlspecialchars($_POST['s_f005']);
+        $val[1] = $sortno;
+        $val[2] = $_POST['s_f003'];
+        $val[3] = $_POST['s_f004'];
+        $val[4] = $_POST['s_f005'];
         $ret = $T_99999_M_FLOOR->update(...$val);
         break;
       case "T_".$CONST_GRP_NO."_M_STATUS":
@@ -52,10 +52,10 @@
           $sortno = $T_99999_M_STATUS->getNewSortNo();
         }
         $val[0] = htmlspecialchars($s_key);
-        $val[1] = htmlspecialchars($_POST['s_f002']);
-        $val[2] = htmlspecialchars($sortno);
-        $val[3] = htmlspecialchars($_POST['s_f004']);
-        $val[4] = htmlspecialchars($_POST['s_f005']);
+        $val[1] = $_POST['s_f002'];
+        $val[2] = $sortno;
+        $val[3] = $_POST['s_f004'];
+        $val[4] = $_POST['s_f005'];
         $ret = $T_99999_M_STATUS->update(...$val);
         break;
       case "T_".$CONST_GRP_NO."_M_ICON":
@@ -64,10 +64,10 @@
           $s_key = $T_99999_M_ICON->getNewID();
         }
         $val[0] = htmlspecialchars($s_key);
-        $val[1] = htmlspecialchars($_POST['s_f002']);
-        $val[2] = htmlspecialchars($_POST['s_f003']);
-        $val[3] = htmlspecialchars($_POST['s_f004']);
-        $val[4] = htmlspecialchars($_POST['s_f005']);
+        $val[1] = $_POST['s_f002'];
+        $val[2] = $_POST['s_f003'];
+        $val[3] = $_POST['s_f004'];
+        $val[4] = $_POST['s_f005'];
         $ret = $T_99999_M_ICON->update(...$val);
         break;
     }

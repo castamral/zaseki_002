@@ -821,7 +821,10 @@ $(document).ready(function(){
 <body>
 	<div id="headline">
 		<div id="logout" admin="<?php print $admin; ?>">
-			<div><?php	print $message." <a href='/logout.php'>ログアウトはこちら。</a>";	?></div>
+			<div><?php	print $message." <a href='/logout.php'>ログアウトはこちら。</a>"; ?>　
+			<a href='/userinfo.php?f_key=<?php print $dflt_f_key; ?>'>ユーザー情報の変更はこちら。</a>　
+			<a href='/userpass.php?f_key=<?php print $dflt_f_key; ?>'>ログインパスワードの変更はこちら。</a>　
+			</div>
 		</div>
 		<div id="lastupdate">
 			<div><?php	print date("Y/m/d H:i:s")." 現在（".$M_COMMON_RELOAD."秒毎に自動更新します）";	?></div>

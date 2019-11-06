@@ -184,11 +184,32 @@ $(document).ready(function(){
 	$('#s_selected').pep({
 			constrainTo: 'parent',
 			grid:       [10,10],
+			start: function(ev, obj) {
+				var min_left = 9999;
+				var min_top  = 9999;
+				var max_left = 0;
+				var max_top  = 0;
+				$("#s_selected").find(".seat").each(function(i, elem) {
+					var drag = $(this);
+					var s_left = parseInt($(this).find(".s_left").text());
+					var s_top = parseInt($(this).find(".s_top").text());
+					if (min_left>s_left) { min_left=s_left; }
+					if (min_top>s_top) { min_top=s_top; }
+					if (max_left<s_left) { max_left=s_left; }
+					if (max_top<s_top) { max_top=s_top; }
+				});
+				$("#s_selected").css("width",max_left - min_left + 100 + "px");
+				$("#s_selected").css("height",max_top - min_top + 100 + "px");
+			},
 			stop: function(ev, obj) {
 				var move_left = $(obj.el).position().left;
 				var move_top = $(obj.el).position().top;
 				var min_left = 9999;
 				var min_top = 9999;
+				$("#s_selected").css("left",move_left + "px");
+				$("#s_selected").css("top",move_top + "px");
+				$("#s_selected").position().left = move_left;
+				$("#s_selected").position().top = move_top;
 				$("#s_selected").find(".seat").each(function(i, elem) {
 					var drag = $(this);
 					var s_left = drag.position().left + move_left;
@@ -227,15 +248,13 @@ $(document).ready(function(){
 					})
 					// Ajaxリクエストが成功した時発動
 					.done( (data) => {
-						//location.reload(false);
+						location.reload(false);
 					})
 					// Ajaxリクエストが失敗した時発動
 					.fail( (data) => {
 						alert('更新が失敗しました。:' + data);
 					});
 				});
-				$("#s_selected").css("left",min_left + "px");
-				$("#s_selected").css("top",min_top + "px");
 				$("#s_selected").css("transform","matrix(1, 0, 0, 1, 0, 0)");
 			},
           	shouldEase: false
@@ -319,12 +338,16 @@ $(document).ready(function(){
 		});
 		var min_left = 9999;
 		var min_top  = 9999;
+		var max_left = 0;
+		var max_top  = 0;
 		$("#s_selected").find(".seat").each(function(i, elem) {
 			var drag = $(this);
 			var s_left = parseInt($(this).find(".s_left").text());
 			var s_top = parseInt($(this).find(".s_top").text());
 			if (min_left>s_left) { min_left=s_left; }
 			if (min_top>s_top) { min_top=s_top; }
+			if (max_left<s_left) { max_left=s_left; }
+			if (max_top<s_top) { max_top=s_top; }
 		});
 		$("#s_selected").css("left",min_left + "px");
 		$("#s_selected").css("top",min_top + "px");
@@ -794,11 +817,11 @@ $(document).ready(function(){
 	display: none;
 }
 #master {
-	background: rgba(125, 125, 125, 1.0);
+	background: rgba(256, 10, 10, 1.0);
 	color: white;
 	font-size : 120% ;
 	margin-right: 10px;
-	width : 150px ;
+	width : 200px ;
 	height : 20px ;
 	text-align : center;
 	white-space: nowrap;
@@ -1259,6 +1282,7 @@ $(document).ready(function(){
 	text-align : center;
 	border-radius: 5px;
 }
+
 </style>
 </head>
 <body>

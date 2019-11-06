@@ -20,10 +20,10 @@
         $stmt = $T_99999_M_FLOOR->getData($s_key);
         while($row = $stmt->fetch(PDO::FETCH_NUM)) {
           $val[0] = htmlspecialchars($s_key);
-          $val[1] = htmlspecialchars($s_sort);
-          $val[2] = htmlspecialchars($row[2]);
-          $val[3] = htmlspecialchars($row[3]);
-          $val[4] = htmlspecialchars($row[4]);
+          $val[1] = $s_sort;
+          $val[2] = $row[2];
+          $val[3] = $row[3];
+          $val[4] = $row[4];
         }
         $ret = $T_99999_M_FLOOR->update(...$val);
         break;
@@ -32,10 +32,10 @@
         $stmt = $T_99999_M_STATUS->getData($s_key);
         while($row = $stmt->fetch(PDO::FETCH_NUM)) {
           $val[0] = htmlspecialchars($s_key);
-          $val[1] = htmlspecialchars($row[1]);
-          $val[2] = htmlspecialchars($s_sort);
-          $val[3] = htmlspecialchars($row[3]);
-          $val[4] = htmlspecialchars($row[4]);
+          $val[1] = $row[1];
+          $val[2] = $s_sort;
+          $val[3] = $row[3];
+          $val[4] = $row[4];
         }
         $ret = $T_99999_M_STATUS->update(...$val);
         break;
@@ -44,10 +44,10 @@
         $stmt = $T_99999_M_ICON->getData($s_key);
         while($row = $stmt->fetch(PDO::FETCH_NUM)) {
           $val[0] = htmlspecialchars($s_key);
-          $val[1] = htmlspecialchars($row[1]);
-          $val[2] = htmlspecialchars($s_sort);
-          $val[3] = htmlspecialchars($row[3]);
-          $val[4] = htmlspecialchars($row[4]);
+          $val[1] = $row[1];
+          $val[2] = $s_sort;
+          $val[3] = $row[3];
+          $val[4] = $row[4];
         }
         $ret = $T_99999_M_ICON->update(...$val);
         break;

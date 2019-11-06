@@ -18,10 +18,10 @@
         $stmt = $T_99999_M_COMMON->getdata(htmlspecialchars($s_key));
 				while($row = $stmt->fetch(PDO::FETCH_NUM)) {
 					$f001 = htmlspecialchars($row[0]);
-					$f002 = htmlspecialchars($row[1]);
-					$f003 = htmlspecialchars($row[2]);
-					$f004 = htmlspecialchars($row[3]);
-					$f005 = htmlspecialchars($row[4]);
+					$f002 = $row[1];
+					$f003 = $row[2];
+					$f004 = $row[3];
+					$f005 = $row[4];
         }
         $ret_json = array('FIELD001'=>$f001, 'FIELD002'=>$f002, 'FIELD003'=>$f003, 'FIELD004'=>$f004, 'FIELD005'=>$f005);
         echo json_encode($ret_json, JSON_UNESCAPED_UNICODE);
@@ -31,10 +31,10 @@
         $stmt = $T_99999_M_FLOOR->getdata(htmlspecialchars($s_key));
 				while($row = $stmt->fetch(PDO::FETCH_NUM)) {
 					$f001 = htmlspecialchars($row[0]);
-					$f002 = htmlspecialchars($row[1]);
-					$f003 = htmlspecialchars($row[2]);
-					$f004 = htmlspecialchars($row[3]);
-					$f005 = htmlspecialchars($row[4]);
+					$f002 = $row[1];
+					$f003 = $row[2];
+					$f004 = $row[3];
+					$f005 = $row[4];
         }
         $ret_json = array('FIELD001'=>$f001, 'FIELD002'=>$f002, 'FIELD003'=>$f003, 'FIELD004'=>$f004, 'FIELD005'=>$f005);
         echo json_encode($ret_json, JSON_UNESCAPED_UNICODE);
@@ -44,10 +44,10 @@
         $stmt = $T_99999_M_STATUS->getdata(htmlspecialchars($s_key));
 				while($row = $stmt->fetch(PDO::FETCH_NUM)) {
 					$f001 = htmlspecialchars($row[0]);
-					$f002 = htmlspecialchars($row[1]);
-					$f003 = htmlspecialchars($row[2]);
-					$f004 = htmlspecialchars($row[3]);
-					$f005 = htmlspecialchars($row[4]);
+					$f002 = $row[1];
+					$f003 = $row[2];
+					$f004 = $row[3];
+					$f005 = $row[4];
         }
         $ret_json = array('FIELD001'=>$f001, 'FIELD002'=>$f002, 'FIELD003'=>$f003, 'FIELD004'=>$f004, 'FIELD005'=>$f005);
         echo json_encode($ret_json, JSON_UNESCAPED_UNICODE);

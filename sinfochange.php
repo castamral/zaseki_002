@@ -29,16 +29,16 @@
 
     $val[0] = htmlspecialchars($s_key);
     $val[1] = htmlspecialchars($s_userid);
-    $val[2] = htmlspecialchars($s_name);
-    $val[3] = htmlspecialchars($s_naisen);
-    $val[4] = htmlspecialchars($s_tokki);
-    $val[5] = htmlspecialchars($s_left);
-    $val[6] = htmlspecialchars($s_top);
-    $val[7] = htmlspecialchars($f_key);
-    $val[8] = htmlspecialchars($s_pic);
-    $val[9] = htmlspecialchars($s_type);
-    $val[10]= htmlspecialchars($s_status_cd);
-    $val[11]= htmlspecialchars($s_rotate);
+    $val[2] = $s_name;
+    $val[3] = $s_naisen;
+    $val[4] = $s_tokki;
+    $val[5] = $s_left;
+    $val[6] = $s_top;
+    $val[7] = $f_key;
+    $val[8] = $s_pic;
+    $val[9] = $s_type;
+    $val[10]= $s_status_cd;
+    $val[11]= $s_rotate;
     $val[12]= date("Y/m/d H:i:s");
     $ret = $T_99999_SEAT->update(...$val);
     //echo $ret.":".$val[0].":".$val[1].":".$val[2].":".$val[3].":".$val[4].":".$val[5].":".$val[6].":".$val[7].":".$val[8].":".$val[9].":".$val[10].":".$val[11];
